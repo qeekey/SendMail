@@ -9,9 +9,9 @@
     或（兼容原来的程序）
     curl -X POST http://mail.yourbusiness.infra/alert -d 'addresses=someone@yourcompany.com.cn&subject=title&message=内空正文&production=产品线名称&mailid=324343243433249343'
     返回值：
-    全部发送成功：{"code":0,"message":"someone@yourcompany.com.cn OK;","production":"数据银行"}
+    全部发送成功：{"code":0,"message":"someone@yourcompany.com.cn OK;","production":"BusinesNane"}
     或   
-    部分发送成功：{"code":-1,"message":"someone3@yourcompany.com.cn javax.mail.SendFailedException: Invalid Addresses;  nested exception is:\tcom.sun.mail.smtp.SMTPAddressFailedException: 550 Mailbox not found or access denied;","production":"数据银行"} 
+    部分发送成功：{"code":-1,"message":"someone3@yourcompany.com.cn javax.mail.SendFailedException: Invalid Addresses;  nested exception is:\tcom.sun.mail.smtp.SMTPAddressFailedException: 550 Mailbox not found or access denied;","production":"BusinesNane"} 
     
 #####普通文本邮件服务接口：  
     增加一个text=1的参数
@@ -49,7 +49,7 @@
     {"code":-1,"message":"xxxxx@yourcompany.com.cn javax.mail.SendFailedException: Invalid Addresses;  nested exception is:\tcom.sun.mail.smtp.SMTPAddressFailedException: 550 Mailbox not found or access denied;","production":"production=Site_job_mail\t:subject=SiteMaster 数据任务结果通知:mailid=null"}
     这个结果代表email不存在了，发送失败；
     
-    {"code":-1,"message":"xxxxx@yourcompany.com.cn com.sun.mail.smtp.SMTPSendFailedException: 550 Connection frequency limited;","production":"production=TrackFrontend-query:subject=数据银行['407521']: '12月HS_M18-44 1+1--收入' 计算完毕:mailid=null"}
+    {"code":-1,"message":"xxxxx@yourcompany.com.cn com.sun.mail.smtp.SMTPSendFailedException: 550 Connection frequency limited;","production":"production=TrackFrontend-query:subject=BusinesNane['407521']: '12月HS_M18-44 1+1--收入' 计算完毕:mailid=null"}
     这个结果代表这个email发送频繁，发送失败；
     
     6、腾讯550 Connection frequency limited出错解释
